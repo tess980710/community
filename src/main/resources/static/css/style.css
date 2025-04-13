@@ -1,0 +1,145 @@
+@charset "UTF-8";
+
+.container {
+	width: 360px;
+	margin: 40px auto;
+}
+
+.noteContainer {
+	width: 500px;
+	margin: 40px auto;
+}
+
+.header {
+	text-align: center;
+	color: #aaaaaa;
+}
+
+.body {
+	text-align: center;
+}
+
+a.btn {
+	width: 120px;
+	background-color: #f8585b;
+	border-radius: 10px;
+	color: white;
+	padding: 1em 1.5em;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	cursor: pointer;
+	display: inline-block;
+	margin: 4px;
+}
+
+a.btn:hover {
+	background-color: #555;
+}
+
+a.btn:active {
+	background-color: black;
+}
+
+.table {
+	table-layout: fixed;
+	border-collapse: collapse;
+	margin: 25px 0;
+	font-family: sans-serif;
+	min-width: 360px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.table:first-child tr:first-child td:first-child {
+	width: 32px;
+}
+
+.table:first-child tr:first-child td:nth-child(2) {
+	width: 50px;
+}
+
+.table.note {
+	min-width: 500px;
+}
+
+.table thead tr {
+	background-color: #009879;
+	color: #ffffff;
+	text-align: center;
+}
+
+.table thead td, .table tbody td {
+	padding: 12px 15px;
+}
+
+.table .label label {
+	background-color: #009879;
+	color: #ffffff;
+	text-align: left;
+	padding: 7px 13px;
+	font-size: 20px;
+	font-weight: bold;
+	margin: 12px;
+	display: inline-block;
+	width: 107px;
+}
+
+.table .input input[type=text], .table .input input[type=password],
+	.table .input textarea {
+	width: 80%;
+	padding: 10px 22px;
+	margin: 10px 5px;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+
+.table .input textarea {
+	height: 230px;
+	resize: none;
+}
+
+.table .input select {
+	width: 160px;
+	padding: 10px 22px;
+	border: 2px solid #000;
+	font-family: inherit;
+	background: url('../images/arrow.png') no-repeat 90% 50%;
+	border-radius: 10px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.table .input select::-ms-expand {
+	display: none;
+}
+
+.table .button {
+	color: #ffffff;
+	padding: 12px 15px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.table .button .btn {
+	width: 330px;
+	background-color: #f8585b;
+	border-radius: 10px;
+	border: none;
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	cursor: pointer;
+	display: inline-block;
+	padding: 10px;
+	font-size: 20px;
+}
+
+[readonly] {
+	background-color: #dddddd;
+}
+
+img.star {
+	width: 20px;
+}

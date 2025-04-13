@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>회원 가입 페이지</title>
+  <script type="text/javascript">
+    function formCheck() {
+      const id = document.getElementById("memberId").value;
+      const pw = document.getElementById("memberPw").value;
+      const pwcheck = document.getElementById("memberPwCheck").value;
+      const name = document.getElementById("memberName").value;
+
+      if (id.length < 3 || id.length > 8) {
+        alert("아이디는 3 ~ 8 글자 사이여야 합니다.")
+        return false;
+      }
+
+      if (pw.length < 3 || pw.length > 8) {
+        alert("비밀번호는 3 ~ 8 글자 사이여야 합니다.")
+        return false;
+      }
+
+      if (pw != pwcheck) {
+        alert("비밀번호가 일치하지 않습니다.")
+        return false;
+      }
+
+      if (name.length < 3 || name.length > 8) {
+        alert("이름은 3 ~ 8 글자 사이여야 합니다.")
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+  <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Sign Up</h1>
+  </div>
+  <div class="body">
+    <form
+            th:action="@{/member/insertForm}"
+            th:object="${memberDto}"
+            method="post"
+            onsubmit="return formCheck();"
+    >
+      <table class="table">
+        <tr>
+          <td class="label"><label>ID</label></td>
+          <td class="input">
+            <input type="text" th:field="*{memberId}" id="memberId" />
+          </td>
+        </tr>
+        <tr>
+          <td class="label"><label>PW</label></td>
+          <td class="input">
+            <input type="password" th:field="*{memberPw}" id="memberPw"/>
+          </td>
+        </tr>
+        <tr>
+          <td class="label"><label>PW Check</label></td>
+          <td class="input">
+            <input type="password" id="memberPwCheck"/>
+          </td>
+        </tr>
+        <tr>
+          <td class="label"><label>Name</label></td>
+          <td class="input"><input type="text" th:field="*{memberName}" id="memberName"/></td>
+        </tr>
+        <tr>
+          <td class="button" colspan="2">
+            <input class="btn" type="submit" value="회원가입" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>
+</body>
+</html>

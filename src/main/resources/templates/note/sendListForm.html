@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>보낸 쪽지함 페이지</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+  </head>
+  <body>
+    <div class="noteContainer">
+      <div class="header">
+        <h1>Send List</h1>
+      </div>
+      <div class="body">
+        <table class="table note">
+          <thead>
+            <tr>
+              <td>중요</td>
+              <td>수신자</td>
+              <td>제목</td>
+              <td>상태</td>
+              <td>발신일</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="5"><a class="btn">목록으로</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>쪽지 작성 페이지</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Note Write</h1>
+      </div>
+      <div class="body">
+        <form>
+          <table class="table">
+            <tr>
+              <td class="label"><label>Send ID</label></td>
+              <td class="input"></td>
+            </tr>
+            <tr>
+              <td class="label"><label>Recv ID</label></td>
+              <td class="input"></td>
+            </tr>
+            <tr>
+              <td class="label"><label>Title</label></td>
+              <td class="input"></td>
+            </tr>
+            <tr>
+              <td class="label"><label>Content</label></td>
+              <td class="input"></td>
+            </tr>
+            <tr>
+              <td class="button" colspan="2">
+                <input class="btn" type="submit" value="전송" />
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
