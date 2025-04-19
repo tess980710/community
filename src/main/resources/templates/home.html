@@ -8,13 +8,18 @@
       <div class="header">
         <h1>SC Note</h1>
       </div>
-      <h2 th:text="${name} + '님, 가입을 환영합니다!'"></h2>
       <div class="body">
-        <a class="btn" href="/member/insertForm">회원가입</a>
-        <a class="btn" href="/member/loginForm">로그인</a>
-        <a class="btn" th:if="${username!=null}" >로그아웃</a>
-        <a class="btn" th:if="${username!=null}">쪽지확인</a>
+        <!-- 로그인이 안 된 경우-->
+        <div th:if="${session.loginDto == null}">
+         <a class="btn" th:href="@{/member/insertForm}">회원가입</a>
+         <a class="btn" th:href="@{/member/loginForm}">로그인</a>
+        </div>
+      <!-- 로그인이 된 경우-->
+      <div th:unless="${session.loginDto == null}">
+        <!--<h2 th:text="|${session.loginDto.memberId+'님 환영합니다.'"}></h2> 와 같은 의미 -->
+        <h2 th:text="|${session.loginDto.memberId}님 환영합니다.|"></h2>
+        <a class="btn" th:href="@{/member/logout}">로그아웃</a>
+        <a class="btn" th:href="@{/note/list}">쪽지확인</a>
       </div>
-    </div>
   </body>
 </html>

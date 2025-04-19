@@ -11,15 +11,23 @@
         <h1>Login</h1>
       </div>
       <div class="body">
-        <form>
+        <form
+            th:action="@{/member/login}"
+            method="post"
+            th:object="${loginDto}"
+        >
           <table class="table">
             <tr>
               <td class="label"><label>ID</label></td>
-              <td class="input"></td>
+              <td class="input">
+                  <input type="text" id="memberId" th:field="*{memberId}">
+              </td>
             </tr>
             <tr>
               <td class="label"><label>PW</label></td>
-              <td class="input"></td>
+              <td class="input">
+                <input type="text" id="password" th:field="*{memberPw}">
+              </td>
             </tr>
             <tr>
               <td class="button" colspan="2">
@@ -27,6 +35,9 @@
               </td>
             </tr>
           </table>
+          <div th:if="${error}" style="color: red;">
+            <p th:text="${error}">
+          </div>
         </form>
       </div>
     </div>

@@ -1,5 +1,6 @@
 package com.example.community.service;
 
+import com.example.community.dto.LoginDto;
 import com.example.community.dto.MemberDto;
 import com.example.community.entitiy.Member;
 import com.example.community.repository.MemberRepository;
@@ -31,4 +32,10 @@ public class MemberService {
 
     }
 
+    public boolean login(LoginDto loginDto) {
+
+        return memberRepository.findByMemberId(loginDto.getMemberId())
+        .map(member -> passwordEncoder.matches(loginDto.getMemberPw(), member.getMemberPw()))
+                .orElse(false);
+    }
 }
